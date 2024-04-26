@@ -21,4 +21,12 @@ public class TournamentService {
 	public Optional<Tournament> getTournament(Integer id) {
 		return tournamentRepository.findById(id);
 	}
+	
+	public Tournament upsertTournament(Tournament tournament) {
+		return tournamentRepository.save(tournament);
+	}
+	
+	public void deleteTournament(Integer id){
+		tournamentRepository.deleteById(id);
+	}
 }
