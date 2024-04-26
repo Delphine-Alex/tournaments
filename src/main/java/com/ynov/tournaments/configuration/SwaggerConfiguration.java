@@ -14,7 +14,7 @@ public class SwaggerConfiguration implements WebMvcConfigurer {
     @Bean
     public OpenAPI openAPI() {
         Info info = new Info()
-                .title("API Web services")
+                .title("Tournaments API - Web services")
                 .version("1.0")
                 .description("This API exposes endpoints to board games.");
 
