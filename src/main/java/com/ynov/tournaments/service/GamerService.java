@@ -22,4 +22,12 @@ public class GamerService {
 	public Optional<Gamer> getGamer(Integer id) {
 		return gamerRepository.findById(id);
 	}
+	
+	public Gamer upsertGamer(Gamer gamer) {
+		return gamerRepository.save(gamer);
+	}
+	
+	public void deleteGamer(Integer id){
+		gamerRepository.deleteById(id);
+	}
 }
