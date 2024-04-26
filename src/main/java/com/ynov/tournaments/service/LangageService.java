@@ -21,5 +21,13 @@ public class LangageService {
 	public Optional<Langage> getLangage(Integer id) {
 		return langageRepository.findById(id);
 	}
+	
+	public Langage upsertLangage(Langage langage) {
+		return langageRepository.save(langage);
+	}
+	
+	public void deleteLangage(Integer id){
+		langageRepository.deleteById(id);
+	}
 
 }
