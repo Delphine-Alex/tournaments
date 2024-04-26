@@ -10,7 +10,7 @@ public class ServerController {
 	
 	@GetMapping("/")
 	public String getServer() {
-		return "Server works!";
+		return "Server works for Tournaments API!";
 	}
 
 }
