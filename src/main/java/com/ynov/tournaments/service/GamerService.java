@@ -17,9 +17,11 @@ public class GamerService {
 	@Autowired
 	private GamerRepository gamerRepository;
 	
-	public Page<Gamer> getGamers(Pageable pageable, String pseudo){
+	public Page<Gamer> getGamers(Pageable pageable, String pseudo, Integer ranking){
 		if(pseudo != null) {
 			return gamerRepository.findAllByPseudo(pageable, pseudo);
+		} else if(ranking != null) {
+			return gamerRepository.findByRanking(ranking, pageable);
 		} else {
 			return gamerRepository.findAll(pageable);
 		}

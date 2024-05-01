@@ -35,10 +35,12 @@ public class GamerController {
 	public ResponseEntity<Page<Gamer>> getGamers(
 			@RequestParam(defaultValue = "0") int page,
 			@RequestParam(defaultValue = "10") int pageSize,
-			@RequestParam(required = false) String pseudo
+			@RequestParam(required = false) String pseudo,
+			@RequestParam(required = false) Integer ranking
+
 		) {
 			Pageable pageable = PageRequest.of(page, pageSize);
-			Page<Gamer> gamersPage = gamerService.getGamers(pageable, pseudo);
+			Page<Gamer> gamersPage = gamerService.getGamers(pageable, pseudo, ranking);
 		    
 			if(gamersPage.isEmpty()) {
 				return new ResponseEntity<>(HttpStatus.NO_CONTENT);

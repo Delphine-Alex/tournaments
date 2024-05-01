@@ -70,8 +70,6 @@ public class Gamer {
 
 	public void setId_langage(Integer id_langage) {
 		this.id_langage = id_langage;
-	}
-	
-	
+	}	
 
 }
