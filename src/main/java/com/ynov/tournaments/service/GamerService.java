@@ -3,6 +3,8 @@ package com.ynov.tournaments.service;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.ynov.tournaments.model.Gamer;
@@ -15,8 +17,12 @@ public class GamerService {
 	@Autowired
 	private GamerRepository gamerRepository;
 	
-	public Iterable<Gamer> getGamers(){
-		return gamerRepository.findAll();
+	public Page<Gamer> getGamers(Pageable pageable, String pseudo){
+		if(pseudo != null) {
+			return gamerRepository.findAllByPseudo(pageable, pseudo);
+		} else {
+			return gamerRepository.findAll(pageable);
+		}
 	}
 	
 	public Optional<Gamer> getGamer(Integer id) {

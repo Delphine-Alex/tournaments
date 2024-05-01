@@ -23,7 +23,7 @@ public class Tournament {
 	private Integer id_game;
 	
 	@Column(name = "id_langage")
-	private Integer id_langage;
+	private Integer idLangage;
 	
 	
 	// Getters and setters
@@ -53,13 +53,15 @@ public class Tournament {
 		this.id_game = id_game;
 	}
 
-	public Integer getId_langage() {
-		return id_langage;
+	public Integer getIdLangage() {
+		return idLangage;
 	}
 
-	public void setId_langage(Integer id_langage) {
-		this.id_langage = id_langage;
+	public void setIdLangage(Integer idLangage) {
+		this.idLangage = idLangage;
 	}
+
+
 
 	
 
