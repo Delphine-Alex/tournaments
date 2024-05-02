@@ -20,23 +20,23 @@ public class RabbitController {
 
     @GetMapping("/rabbit")
     public void  getServer() {
-        ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("localhost");
-        factory.setPort(5672);
-        factory.setUsername("llele");
-        factory.setPassword("admin");
-        try (Connection connection = factory.newConnection();
-             Channel channel = connection.createChannel()) {
-            // Create a channel
-            // Use the channel to interact with RabbitMQ (e.g., declare queues, publish messages, etc.)
-            channel.queueDeclare(QUEUE_NAME, true,false,false,null);
-            String message = "Hello World! i am Tournaments";
-            channel.basicPublish("ok", QUEUE_NAME, null, message.getBytes());
-            System.out.println(" [x] Sent '" + message + "'");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (TimeoutException e) {
-            throw new RuntimeException(e);
-        }
+//        ConnectionFactory factory = new ConnectionFactory();
+//        factory.setHost("localhost");
+//        factory.setPort(5672);
+//        factory.setUsername("llele");
+//        factory.setPassword("admin");
+//        try (Connection connection = factory.newConnection();
+//             Channel channel = connection.createChannel()) {
+//            // Create a channel
+//            // Use the channel to interact with RabbitMQ (e.g., declare queues, publish messages, etc.)
+//            channel.queueDeclare(QUEUE_NAME, true,false,false,null);
+//            String message = "Hello World! i am Tournaments";
+//            channel.basicPublish("ok", QUEUE_NAME, null, message.getBytes());
+//            System.out.println(" [x] Sent '" + message + "'");
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        } catch (TimeoutException e) {
+//            throw new RuntimeException(e);
+//        }
     }
 }
