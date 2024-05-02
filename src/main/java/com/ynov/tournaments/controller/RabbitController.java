@@ -9,9 +9,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.rabbitmq.client.ConnectionFactory;
-import com.rabbitmq.client.Connection;
-import com.rabbitmq.client.Channel;
+//import com.rabbitmq.client.ConnectionFactory;
+//import com.rabbitmq.client.Connection;
+//import com.rabbitmq.client.Channel;
 
 @RestController
 @RequestMapping("/api/v1")
